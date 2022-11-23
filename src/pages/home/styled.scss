@@ -1,0 +1,55 @@
+
+// color
+
+$PM-tone-5: #141614;
+$PM-tone-4:#4e4f4e;
+$PM-tone-3:#888988;
+$PM-tone-2:#c1c2c1;
+$PM-tone-1:#fbfbfb;
+
+$PM-blue: #8eb6f9;
+$PM-green: #00E690;
+$PM-lime:#D6F470;
+$PM-orange: #ffab45;
+$PM-pink:#f194e1;
+$PM-red:#ff3e55;
+
+//font
+
+@mixin headLine-b{
+    font-size: 25px;
+    font-weight: 900;
+}
+
+@mixin subtit-b{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+@mixin body-b{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@mixin caption-b{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@mixin headline-l {
+    font-size: 25px;
+    font-weight: 400;
+}
+@mixin subtit-l {
+    font-size: 20px;
+    font-weight: 400;
+}
+@mixin body-l {
+    font-size: 16px;
+    font-weight: 300;
+}
+@mixin caption-l {
+    font-size: 12px;
+    font-weight: 300;
+    
+}
