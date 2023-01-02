@@ -38,3 +38,61 @@
     margin-bottom: 10rem;
   }  
 }
+
+//EmailLogin.jsx
+.emailLogin{
+  margin: auto;
+  text-align: center;
+  color: #00E690;
+  font-size: 25px;
+  font-weight: 900; 
+  margin-bottom: 5rem;
+}
+.inputBox{
+  width: 90%;
+  margin: auto;
+  .loginTitle{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .loginInput{
+    font-size: 15px;
+    font-weight: 700;
+    height: 40px;
+    width: 98%;
+    border-radius: 10px;
+    text-align: center;
+    color: #4e4f4e;
+    border: 2px solid #4e4f4e;
+    margin-bottom: 1.5rem;
+  }
+  .butDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+    height: 40px;
+    .loginBut{
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 0;
+      border: 2px solid #00E690;
+      background-color: #00E690;
+      color: #fbfbfb;
+      margin-right: 2rem;
+      width: 100%;
+      cursor: pointer;
+    }
+    .cancelBit{
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 2px solid #00E690;
+      background-color: #fff;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
