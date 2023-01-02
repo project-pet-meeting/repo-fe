@@ -16,7 +16,7 @@ const EmaliLogin = () => {
 
     // 서버로 보낼 데이터
     const user = {
-      username: usernameRef.current.value,
+      email: usernameRef.current.value,
       password: passwordRef.current.value,
     };
 
