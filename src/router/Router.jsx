@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import EmaliLogin from "../pages/login/components/EmailLogin";
 import KakaoLogin from "../pages/login/components/KakaoLogin";
 import NaverLogin from "../pages/login/components/NaverLogin";
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/emaillogin" exact element={<EmaliLogin />} />
         <Route path="/user/kakao/callback" exact element={<KakaoLogin />} />
         <Route path="/login/oauth2/code/naver" exact element={<NaverLogin />} />
+        <Route path="/signup" exact element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
