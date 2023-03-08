@@ -14,39 +14,40 @@ const MapGeoLocation = () => {
 
   useEffect(() => {
     if (navigator.geolocation) {
+      // GeoLocation을 이용해서 접속 위치를 얻어옵니다
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setGeoLocation((prev) => ({
+          setState((prev) => ({
             ...prev,
             center: {
               lat: position.coords.latitude, // 위도
               lng: position.coords.longitude, // 경도
             },
             isLoading: false,
-          }));
+          }))
         },
         (err) => {
-          setGeoLocation((prev) => ({
+          setState((prev) => ({
             ...prev,
             errMsg: err.message,
             isLoading: false,
-          }));
+          }))
         }
-      );
+      )
     } else {
-      // GeoLocation을 사용할 수 없을 때 마커 표시 위치와 인포윈도우 내용 설정.
-      setGeoLocation((prev) => ({
+      // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+      setState((prev) => ({
         ...prev,
-        errMsg: "내위치 사용을 눌러주세요.",
+        errMsg: "geolocation을 사용할수 없어요..",
         isLoading: false,
-      }));
+      }))
     }
-  }, []);
+  }, [])
 
   return (
     <>
       <Map // 지도를 표시할 Container
-        center={geoLocation.center}
+        center={state.center}
         style={{
           // 지도의 크기
           width: "100%",
@@ -54,9 +55,11 @@ const MapGeoLocation = () => {
         }}
         level={3} // 지도의 확대 레벨
       >
-        {!geoLocation.isLoading && (
-          <MapMarker position={geoLocation.center}>
-            <div style={{ padding: "5px", color: "#000" }}>{geoLocation.errMsg ? geoLocation.errMsg : "여기에 계신가요?!"}</div>
+        {!state.isLoading && (
+          <MapMarker position={state.center}>
+            <div style={{ padding: "5px", color: "#000" }}>
+              {state.errMsg ? state.errMsg : "여기에 계신가요?!"}
+            </div>
           </MapMarker>
         )}
       </Map>

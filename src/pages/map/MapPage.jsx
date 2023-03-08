@@ -5,7 +5,7 @@ from "react-router-dom";
 import MapView from "./components/MapView";
 import MapBtn from "./components/MapBtn";
 import NavBar from "../../components/NavBar";
-
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 const MapPage = () => {
 
   const location = useLocation();
@@ -25,7 +25,7 @@ const MapPage = () => {
   try {
     const res = await axios.get(`${process.env.REACT_APP_SERVER_API}/api/meeting`
     )
-    console.log(res.data.meetingList.length);
+    console.log(res.data.meetingList,"dd");
     
     if( res.status === 200 || 202 ){
       if(res.data.meetingList.length === 0) {
@@ -102,8 +102,25 @@ const MapPage = () => {
             <MapBtn icons='gps' onClick={nowLocation} />
           </span>
         </div>
-        <MapView geoLocation={geoLocation}/>
-        <div style={{ display: "flex" }}></div>
+        {/* <MapView geoLocation={geoLocation}/>
+        <div style={{ display: "flex" }}></div> */}
+        <Map // 지도를 표시할 Container
+        center={geoLocation.center}
+        style={{
+          // 지도의 크기
+          width: "100%",
+          height: "100vh",
+        }}
+        level={3} // 지도의 확대 레벨
+      >
+        {!geoLocation.isLoading && (
+          <MapMarker position={geoLocation.center}>
+            <div style={{ padding: "5px", color: "#000" }}>
+              {geoLocation.errMsg ? geoLocation.errMsg : "여기에 계신가요?!"}
+            </div>
+          </MapMarker>
+        )}
+      </Map>
       </div>
       <NavBar />
     </>
