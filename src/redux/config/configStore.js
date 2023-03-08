@@ -1,3 +1,4 @@
+
 //기존 store incourse 프로젝트 때 사용했던 방식
 import { configureStore } from "@reduxjs/toolkit";
 import defaultSlice from "../modules/defaultSlice";
@@ -47,4 +48,6 @@ export default store;
 //     //...
 //   };
 // };
+
+
 
