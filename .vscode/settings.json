@@ -1,0 +1,8 @@
+{
+  "terminal.explorerKind": "external",
+  "terminal.integrated.fontFamily": "",
+  "terminal.integrated.automationProfile.osx": {
+  
+  },
+  "terminal.external.osxExec": "iTerm.app"
+}
